@@ -76,7 +76,7 @@ class SlideToAcceptElement extends HTMLElement {
 
     get thresholdPercent() {
         return parseFloat(this.getAttribute('threshold')) || 0.8;
-    }    render() {
+    } render() {
         const handleSize = parseInt(this.height) - 10;
         const borderRadius = parseInt(this.height) / 2;
         const widthValue = this.width.includes('%') ? this.width : `${this.width}px`;
@@ -215,7 +215,7 @@ class SlideToAcceptElement extends HTMLElement {
     setupEventListeners() {
         const container = this.shadowRoot.querySelector('.slide-container');
         const handle = this.shadowRoot.querySelector('.slide-handle');
-        const resetBtn = this.shadowRoot.querySelector('.reset-btn');        if (!container || !handle || !resetBtn) return;
+        const resetBtn = this.shadowRoot.querySelector('.reset-btn'); if (!container || !handle || !resetBtn) return;
 
         this.container = container;
         this.handle = handle;
@@ -267,7 +267,7 @@ class SlideToAcceptElement extends HTMLElement {
         if (resetBtn && this.resetHandler) {
             resetBtn.removeEventListener('click', this.resetHandler);
         }
-    }    disconnectedCallback() {
+    } disconnectedCallback() {
         this.removeEventListeners();
     }
 
@@ -358,13 +358,13 @@ class SlideToAcceptElement extends HTMLElement {
         this.resetPosition();
 
         this.dispatchEvent(new CustomEvent('reset', {
-            detail: { timestamp: new Date() },            bubbles: true
+            detail: { timestamp: new Date() }, bubbles: true
         }));
     }
 
     getActualWidth() {
         const widthAttr = this.getAttribute('width') || '300';
-        
+
         // If width is a percentage or contains non-numeric characters
         if (widthAttr.includes('%') || isNaN(parseInt(widthAttr))) {
             // Wait for the element to be rendered, then get the actual computed width
@@ -375,17 +375,17 @@ class SlideToAcceptElement extends HTMLElement {
                     return containerRect.width;
                 }
             }
-            
+
             // Fallback: try to get width from the host element
             const hostRect = this.getBoundingClientRect();
             if (hostRect.width > 0) {
                 return hostRect.width;
             }
-            
+
             // Final fallback to default width
             return 300;
         }
-        
+
         // Otherwise use the numeric width attribute
         return parseInt(widthAttr);
     }

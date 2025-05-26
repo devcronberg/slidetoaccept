@@ -2,6 +2,10 @@
 
 A modern, interactive slide-to-accept component built as a Web Component. Perfect for confirmation actions, agreements, and user consent interactions.
 
+## Repository
+
+[GitHub Repository](https://github.com/devcronberg/slidetoaccept)
+
 ## 🎯 Live Demos
 
 - **[Complete Demo](demo.html)** - Interactive showcase of all features and attributes

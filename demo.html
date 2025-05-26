@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
             margin: 20px 0;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .demo-section h2 {
@@ -157,17 +158,18 @@
             body {
                 padding: 10px;
             }
-            
+
             .demo-section {
                 padding: 20px;
             }
-            
+
             .api-buttons {
                 justify-content: center;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1>🎛️ Slide to Accept Demo</h1>
@@ -177,44 +179,37 @@
     <div class="demo-section">
         <h2>1. Default Configuration</h2>
         <p>Basic usage with default settings</p>
-        
+
         <slide-to-accept id="default"></slide-to-accept>
-        
+
         <div class="code-snippet">
-&lt;slide-to-accept&gt;&lt;/slide-to-accept&gt;
+            &lt;slide-to-accept&gt;&lt;/slide-to-accept&gt;
         </div>
     </div>
 
     <div class="demo-section">
         <h2>2. Custom Text and Messages</h2>
         <p>Customizing the display text and success message</p>
-        
-        <slide-to-accept 
-            id="custom-text"
-            text="Swipe right to continue"
-            success-text="🎉 Great! You did it!">
+
+        <slide-to-accept id="custom-text" text="Swipe right to continue" success-text="🎉 Great! You did it!">
         </slide-to-accept>
-        
+
         <div class="code-snippet">
-&lt;slide-to-accept 
-    text="Swipe right to continue"
-    success-text="🎉 Great! You did it!"&gt;
-&lt;/slide-to-accept&gt;
+            &lt;slide-to-accept
+            text="Swipe right to continue"
+            success-text="🎉 Great! You did it!"&gt;
+            &lt;/slide-to-accept&gt;
         </div>
     </div>
 
     <div class="demo-section">
         <h2>3. Size Variations</h2>
-        
+
         <div class="attribute-showcase">
             <div class="demo-item">
                 <h4>Small Size</h4>
                 <div class="description">Compact slider for tight spaces</div>
-                <slide-to-accept 
-                    id="small"
-                    text="Small slider"
-                    width="250"
-                    height="45">
+                <slide-to-accept id="small" text="Small slider" width="250" height="45">
                 </slide-to-accept>
                 <div class="code-snippet">width="250" height="45"</div>
             </div>
@@ -222,11 +217,7 @@
             <div class="demo-item">
                 <h4>Large Size</h4>
                 <div class="description">Big slider for prominent actions</div>
-                <slide-to-accept 
-                    id="large"
-                    text="Large confirmation slider"
-                    width="450"
-                    height="80">
+                <slide-to-accept id="large" text="Large confirmation slider" width="450" height="80">
                 </slide-to-accept>
                 <div class="code-snippet">width="450" height="80"</div>
             </div>
@@ -234,11 +225,7 @@
             <div class="demo-item">
                 <h4>Responsive Width</h4>
                 <div class="description">Full width with maximum constraint</div>
-                <slide-to-accept 
-                    id="responsive"
-                    text="Responsive slider"
-                    width="100%"
-                    class="responsive-demo">
+                <slide-to-accept id="responsive" text="Responsive slider" width="100%" class="responsive-demo">
                 </slide-to-accept>
                 <div class="code-snippet">width="100%" style="max-width: 500px"</div>
             </div>
@@ -247,48 +234,32 @@
 
     <div class="demo-section">
         <h2>4. Color Themes</h2>
-        
+
         <div class="attribute-showcase">
             <div class="demo-item">
                 <h4>Blue Theme</h4>
-                <slide-to-accept 
-                    id="blue"
-                    text="Slide to proceed"
-                    track-color="#007bff"
-                    handle-color="#ffffff">
+                <slide-to-accept id="blue" text="Slide to proceed" track-color="#007bff" handle-color="#ffffff">
                 </slide-to-accept>
                 <div class="code-snippet">track-color="#007bff" handle-color="#ffffff"</div>
             </div>
 
             <div class="demo-item">
                 <h4>Orange Theme</h4>
-                <slide-to-accept 
-                    id="orange"
-                    text="Slide to order"
-                    track-color="#ff6b35"
-                    handle-color="#fff">
+                <slide-to-accept id="orange" text="Slide to order" track-color="#ff6b35" handle-color="#fff">
                 </slide-to-accept>
                 <div class="code-snippet">track-color="#ff6b35" handle-color="#fff"</div>
             </div>
 
             <div class="demo-item">
                 <h4>Purple Theme</h4>
-                <slide-to-accept 
-                    id="purple"
-                    text="Slide to unlock"
-                    track-color="#6f42c1"
-                    handle-color="#f8f9fa">
+                <slide-to-accept id="purple" text="Slide to unlock" track-color="#6f42c1" handle-color="#f8f9fa">
                 </slide-to-accept>
                 <div class="code-snippet">track-color="#6f42c1" handle-color="#f8f9fa"</div>
             </div>
 
             <div class="demo-item">
                 <h4>Dark Theme</h4>
-                <slide-to-accept 
-                    id="dark"
-                    text="Slide to activate"
-                    track-color="#343a40"
-                    handle-color="#ffc107">
+                <slide-to-accept id="dark" text="Slide to activate" track-color="#343a40" handle-color="#ffc107">
                 </slide-to-accept>
                 <div class="code-snippet">track-color="#343a40" handle-color="#ffc107"</div>
             </div>
@@ -298,26 +269,18 @@
     <div class="demo-section">
         <h2>5. Threshold Settings</h2>
         <p>Different completion thresholds (how far you need to slide)</p>
-        
+
         <div class="attribute-showcase">
             <div class="demo-item">
                 <h4>Easy (50% threshold)</h4>
-                <slide-to-accept 
-                    id="easy"
-                    text="Easy slide (50%)"
-                    threshold="0.5"
-                    track-color="#28a745">
+                <slide-to-accept id="easy" text="Easy slide (50%)" threshold="0.5" track-color="#28a745">
                 </slide-to-accept>
                 <div class="code-snippet">threshold="0.5"</div>
             </div>
 
             <div class="demo-item">
                 <h4>Hard (95% threshold)</h4>
-                <slide-to-accept 
-                    id="hard"
-                    text="Must slide almost all the way"
-                    threshold="0.95"
-                    track-color="#dc3545">
+                <slide-to-accept id="hard" text="Must slide almost all the way" threshold="0.95" track-color="#dc3545">
                 </slide-to-accept>
                 <div class="code-snippet">threshold="0.95"</div>
             </div>
@@ -326,42 +289,29 @@
 
     <div class="demo-section">
         <h2>6. Real-World Examples</h2>
-        
+
         <div class="attribute-showcase">
             <div class="demo-item">
                 <h4>Terms & Conditions</h4>
                 <div class="description">Legal agreement acceptance</div>
-                <slide-to-accept 
-                    id="terms"
-                    text="Slide to accept terms"
-                    success-text="✅ Terms accepted!"
-                    track-color="#007bff"
-                    width="400">
+                <slide-to-accept id="terms" text="Slide to accept terms" success-text="✅ Terms accepted!"
+                    track-color="#007bff" width="400">
                 </slide-to-accept>
             </div>
 
             <div class="demo-item">
                 <h4>Payment Confirmation</h4>
                 <div class="description">Order processing confirmation</div>
-                <slide-to-accept 
-                    id="payment"
-                    text="Slide to place order ($99.99)"
-                    success-text="🛒 Order placed successfully!"
-                    track-color="#28a745"
-                    threshold="0.85">
+                <slide-to-accept id="payment" text="Slide to place order ($99.99)"
+                    success-text="🛒 Order placed successfully!" track-color="#28a745" threshold="0.85">
                 </slide-to-accept>
             </div>
 
             <div class="demo-item">
                 <h4>Delete Confirmation</h4>
                 <div class="description">Destructive action confirmation</div>
-                <slide-to-accept 
-                    id="delete"
-                    text="Slide to delete permanently"
-                    success-text="⚠️ Item deleted"
-                    track-color="#dc3545"
-                    threshold="0.9"
-                    width="320">
+                <slide-to-accept id="delete" text="Slide to delete permanently" success-text="⚠️ Item deleted"
+                    track-color="#dc3545" threshold="0.9" width="320">
                 </slide-to-accept>
             </div>
         </div>
@@ -370,53 +320,50 @@
     <div class="demo-section">
         <h2>7. JavaScript API Demo</h2>
         <p>Programmatic control and event handling</p>
-        
-        <slide-to-accept 
-            id="api-demo"
-            text="API controlled slider"
-            success-text="🚀 Programmatically completed!"
+
+        <slide-to-accept id="api-demo" text="API controlled slider" success-text="🚀 Programmatically completed!"
             track-color="#6f42c1">
         </slide-to-accept>
-        
+
         <div class="api-buttons">
             <button class="api-btn check" onclick="checkStatus()">Check Status</button>
             <button class="api-btn complete" onclick="completeSlider()">Complete</button>
             <button class="api-btn reset" onclick="resetSlider()">Reset</button>
         </div>
-        
+
         <div class="code-snippet">
-// JavaScript API methods
-slider.isCompleted()           // Returns boolean
-slider.programmaticComplete()  // Complete programmatically  
-slider.programmaticReset()     // Reset programmatically
+            // JavaScript API methods
+            slider.isCompleted() // Returns boolean
+            slider.programmaticComplete() // Complete programmatically
+            slider.programmaticReset() // Reset programmatically
         </div>
     </div>
 
     <div class="demo-section">
         <h2>8. Event Monitoring</h2>
         <p>Real-time event logging for all sliders on this page</p>
-        
+
         <div class="event-log" id="eventLog">
             <div class="log-entry">Event log initialized. Try sliding any component above...</div>
         </div>
-        
-        <div class="code-snippet">
-// Event listeners
-slider.addEventListener('accepted', (event) => {
-    console.log('Accepted!', event.detail.timestamp);
-});
 
-slider.addEventListener('reset', (event) => {
-    console.log('Reset!', event.detail.timestamp);
-});
+        <div class="code-snippet">
+            // Event listeners
+            slider.addEventListener('accepted', (event) => {
+            console.log('Accepted!', event.detail.timestamp);
+            });
+
+            slider.addEventListener('reset', (event) => {
+            console.log('Reset!', event.detail.timestamp);
+            });
         </div>
-    </div>    <!-- Load the web component locally for testing -->
+    </div> <!-- Load the web component locally for testing -->
     <script src="slidetoaccept.js"></script>
-    
+
     <script>
         // Event logging
         const eventLog = document.getElementById('eventLog');
-        
+
         function logEvent(message, type = 'info') {
             const timestamp = new Date().toLocaleTimeString();
             const entry = document.createElement('div');
@@ -429,14 +376,14 @@ slider.addEventListener('reset', (event) => {
         // Add event listeners to all sliders
         document.addEventListener('DOMContentLoaded', () => {
             const sliders = document.querySelectorAll('slide-to-accept');
-            
+
             sliders.forEach((slider, index) => {
                 const id = slider.id || `slider-${index}`;
-                
+
                 slider.addEventListener('accepted', (event) => {
                     logEvent(`Slider "${id}" was ACCEPTED`, 'accepted');
                 });
-                
+
                 slider.addEventListener('reset', (event) => {
                     logEvent(`Slider "${id}" was RESET`, 'reset');
                 });
@@ -471,4 +418,5 @@ slider.addEventListener('reset', (event) => {
         }, 1000);
     </script>
 </body>
+
 </html>
