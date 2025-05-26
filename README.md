@@ -8,8 +8,8 @@ A modern, interactive slide-to-accept component built as a Web Component. Perfec
 
 ## 🎯 Live Demos
 
-- **[Complete Demo](demo.html)** - Interactive showcase of all features and attributes
-- **[Simple Demo](demo-simple.html)** - Basic examples without styling
+- **[Complete Demo](https://devcronberg.github.io/slidetoaccept/demo.html)** - Interactive showcase of all features and attributes
+- **[Simple Demo](https://devcronberg.github.io/slidetoaccept/demo-simple.html)** - Basic examples without styling
 
 ## What are Web Components?
 
