@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide to Accept - Simple Demo</title>
+</head>
+
+<body>
+    <h1>Slide to Accept - Simple Demo</h1>
+    <p>Basic examples without styling</p>
+
+    <h2>1. Default</h2>
+    <slide-to-accept></slide-to-accept>
+
+    <h2>2. Custom Text</h2>
+    <slide-to-accept text="Slide to confirm" success-text="✅ Confirmed!"></slide-to-accept>
+
+    <h2>3. Different Sizes</h2>
+    <p>Small:</p>
+    <slide-to-accept text="Small" width="200" height="40"></slide-to-accept>
+
+    <p>Large:</p>
+    <slide-to-accept text="Large slider" width="400" height="80"></slide-to-accept>
+
+    <h2>4. Color Themes</h2>
+    <p>Blue:</p>
+    <slide-to-accept text="Blue theme" track-color="#007bff"></slide-to-accept>
+
+    <p>Red:</p>
+    <slide-to-accept text="Red theme" track-color="#dc3545"></slide-to-accept>
+
+    <h2>5. Different Thresholds</h2>
+    <p>Easy (50%):</p>
+    <slide-to-accept text="Easy slide" threshold="0.5" track-color="#28a745"></slide-to-accept>
+
+    <p>Hard (90%):</p>
+    <slide-to-accept text="Hard slide" threshold="0.9" track-color="#ffc107"></slide-to-accept>
+
+    <h2>6. Responsive Width</h2>
+    <slide-to-accept text="Responsive" width="100%" style="max-width: 500px;"></slide-to-accept>
+
+
+    <!-- Load the web component -->
+    <script src="https://devcronberg.github.io/slidetoaccept/slidetoaccept.js"></script>
+
+
+</body>
+
+</html>

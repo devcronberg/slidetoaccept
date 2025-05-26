@@ -2,6 +2,11 @@
 
 A modern, interactive slide-to-accept component built as a Web Component. Perfect for confirmation actions, agreements, and user consent interactions.
 
+## 🎯 Live Demos
+
+- **[Complete Demo](demo.html)** - Interactive showcase of all features and attributes
+- **[Simple Demo](demo-simple.html)** - Basic examples without styling
+
 ## What are Web Components?
 
 Web Components are a set of web platform APIs that allow you to create custom, reusable HTML elements. They work across all modern browsers and frameworks without dependencies. Key benefits include:

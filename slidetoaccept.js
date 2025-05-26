@@ -76,11 +76,10 @@ class SlideToAcceptElement extends HTMLElement {
 
     get thresholdPercent() {
         return parseFloat(this.getAttribute('threshold')) || 0.8;
-    }
-
-    render() {
+    }    render() {
         const handleSize = parseInt(this.height) - 10;
         const borderRadius = parseInt(this.height) / 2;
+        const widthValue = this.width.includes('%') ? this.width : `${this.width}px`;
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -91,7 +90,7 @@ class SlideToAcceptElement extends HTMLElement {
 
                 .slide-container {
                     position: relative;
-                    width: ${this.width}px;
+                    width: ${widthValue};
                     height: ${this.height}px;
                     background: #e0e0e0;
                     border-radius: ${borderRadius}px;
@@ -216,15 +215,15 @@ class SlideToAcceptElement extends HTMLElement {
     setupEventListeners() {
         const container = this.shadowRoot.querySelector('.slide-container');
         const handle = this.shadowRoot.querySelector('.slide-handle');
-        const resetBtn = this.shadowRoot.querySelector('.reset-btn');
-
-        if (!container || !handle || !resetBtn) return;
+        const resetBtn = this.shadowRoot.querySelector('.reset-btn');        if (!container || !handle || !resetBtn) return;
 
         this.container = container;
         this.handle = handle;
         this.successMessage = this.shadowRoot.querySelector('.success-message');
 
-        this.maxDistance = parseInt(this.width) - parseInt(this.height) + 5;
+        // Calculate actual width - handle percentage widths properly
+        const actualWidth = this.getActualWidth();
+        this.maxDistance = actualWidth - parseInt(this.height) + 5;
         this.threshold = this.maxDistance * this.thresholdPercent;
 
         this.removeEventListeners();
@@ -268,14 +267,21 @@ class SlideToAcceptElement extends HTMLElement {
         if (resetBtn && this.resetHandler) {
             resetBtn.removeEventListener('click', this.resetHandler);
         }
+    }    disconnectedCallback() {
+        this.removeEventListeners();
     }
 
-    disconnectedCallback() {
-        this.removeEventListeners();
+    recalculateDistances() {
+        const actualWidth = this.getActualWidth();
+        this.maxDistance = actualWidth - parseInt(this.height) + 5;
+        this.threshold = this.maxDistance * this.thresholdPercent;
     }
 
     onStart(e) {
         if (this.container.classList.contains('completed')) return;
+
+        // Recalculate distances in case the element was resized
+        this.recalculateDistances();
 
         this.isDragging = true;
         this.startX = this.getClientX(e);
@@ -352,9 +358,36 @@ class SlideToAcceptElement extends HTMLElement {
         this.resetPosition();
 
         this.dispatchEvent(new CustomEvent('reset', {
-            detail: { timestamp: new Date() },
-            bubbles: true
+            detail: { timestamp: new Date() },            bubbles: true
         }));
+    }
+
+    getActualWidth() {
+        const widthAttr = this.getAttribute('width') || '300';
+        
+        // If width is a percentage or contains non-numeric characters
+        if (widthAttr.includes('%') || isNaN(parseInt(widthAttr))) {
+            // Wait for the element to be rendered, then get the actual computed width
+            // Use the slide-container element which has the actual rendered width
+            if (this.container) {
+                const containerRect = this.container.getBoundingClientRect();
+                if (containerRect.width > 0) {
+                    return containerRect.width;
+                }
+            }
+            
+            // Fallback: try to get width from the host element
+            const hostRect = this.getBoundingClientRect();
+            if (hostRect.width > 0) {
+                return hostRect.width;
+            }
+            
+            // Final fallback to default width
+            return 300;
+        }
+        
+        // Otherwise use the numeric width attribute
+        return parseInt(widthAttr);
     }
 
     isCompleted() {
